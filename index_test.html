@@ -20,6 +20,9 @@
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./stylesheets/normalize.min.css">
+    <link rel="stylesheet" href="./stylesheets/animate.min.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]
@@ -58,23 +61,65 @@
     <div class="container-fluid">
 
       <div class="starter-template">
-        <h1>バイオリンの勉強</h1>
+        <h1>バイオリンの勉強 test</h1>
       <div class="row">
         <p><a href="e_minor_1st_pos.html" class="btn btn-primary" role="button">ホ短調 E minor 1st ポジション</a></p>
         <p><a href="b_minor_1st_pos.html" class="btn btn-primary" role="button">ロ短調 B minor 1st ポジション</a></p>
-        
-        <p><a href="index_test.html">test</a></p>
+        <p><a href="index.html">もどる</a></p>
       </div>
-
     </div><!-- /.container -->
 
-
+    <div id="modal-02">
+        <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+        <div class="modal-content">
+            <!--Your modal content goes here-->
+            <div class="container-fluid">
+                <div class="row">
+                <p class="text-center">ロ短調 B minor 1st ポジション</p>
+                <img src="./images/B_minor_1st_pos.gif" class="center-block" alt="...">
+                <p class="text-center"><div  id="btn-close-modal" class="close-modal-02"><a class="btn btn-default" href="#">もどる</a></div></p>
+                </div>
+            </div><!-- /.container -->
+        </div>
+    </div>
+        
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./javascripts/jquery-1.11.3.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="./javascripts/bootstrap.min.js"></script>
+    
+    <script src="./javascripts/jquery.min.js"></script>
+    <script src="./javascripts/animatedModal.min.js"></script>
+        <script>
+
+            //demo 01
+            $("#demo01").animatedModal();
+
+            //demo 02
+            $("#demo02").animatedModal({
+                modalTarget:'modal-02',
+                animatedIn:'slideInRight',
+                animatedOut:'slideOutRight',
+                color:'#FFFFFF',
+                // Callbacks
+                beforeOpen: function() {
+                    console.log("The animation was called");
+                },           
+                afterOpen: function() {
+                    console.log("The animation is completed");
+                }, 
+                beforeClose: function() {
+                    console.log("The animation was called");
+                }, 
+                afterClose: function() {
+                    console.log("The animation is completed");
+                }
+            });
+
+        </script>
+        
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <script src="../../assets/js/ie10-viewport-bug-workaround.js">--></script>
   </body>
